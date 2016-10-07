@@ -13,7 +13,7 @@
 #   rake "some:great:rake:task"
 # end
 #
-every :day, at: '12am' do
+every :day, at: '5:30pm' do
   # specify the task name as a string
   rake 'scrape_rank '
 end
