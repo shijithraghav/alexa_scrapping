@@ -1,0 +1,35 @@
+<div class = "content">
+<div class = "notice_board">
+  <%= @notice%>
+</div>
+
+
+<div class = "box">
+  <%= form_for @website, url: {action: 'create'} do |f| %>
+          <%= f.label :url_name, "Domain" %>
+          <%= f.text_field :url_name, class: "form-control" %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit "OK", class: 'btn btn-primary' %>
+          <% end %>
+
+</div>
+<div id = "other_details">
+  <table>
+  <tr>
+    <th>URL Name &nbsp; &nbsp; &nbsp;</th>
+    <th>Rank</th>
+  </tr>
+
+   <% @urls.each do |site|%>
+   <tr>
+    <td><%= link_to site.url_name,site %></td>
+    <% site.ranks.each do |rank| %>
+    <td><%= rank.rank%></td>
+    <td><%= link_to 'Delete', site, method: :delete %></td>
+    <% end%>
+    </tr>
+    <% end%>
+</table>
+
+</div>
+</div>

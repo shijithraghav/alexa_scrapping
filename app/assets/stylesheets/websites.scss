@@ -1,0 +1,41 @@
+// Place all the styles related to the websites controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar-text{
+  height: 35px;
+background-color: #006290;
+border-top: 1px solid #3381a6;
+}
+ a.navbar-link{
+  color: #fff !important;
+  text-decoration: none;
+}
+.top_bar{
+  width: auto;
+  height: auto;
+  float: right;
+  padding: 6px 53px 7px 7px;
+  font-size: 13px;
+}
+.top_left_bar{
+  width: auto;
+  height: auto;
+  float: left;
+  padding: 6px 7px 7px 53px;
+  font-size: 15px;
+
+}
+.content{
+  float: left;
+  width: 100%;
+  margin-top: 35px;
+}
+.box{
+  width: 1400px;
+  margin: 0 auto;
+}
+#other_details{
+  margin: 0 auto;
+width: 1401px;
+margin-top: 100px;
+}

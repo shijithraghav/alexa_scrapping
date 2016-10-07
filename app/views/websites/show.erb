@@ -1,0 +1,22 @@
+<div id = "other_details">
+  <table>
+  <tr>
+    <th>URL Name &nbsp; &nbsp; &nbsp;</th>
+    <th>Rank</th>
+  </tr>
+   <tr>
+    <td><%= @website.url_name %></td>
+    <% @website.ranks.each do |rank| %>
+    <td><%= rank.rank%></td>
+    <td><%= link_to 'Delete', @website, method: :delete %></td>
+    <% end%>
+    </tr>
+</table>
+
+</div>
+<div id = "chart">
+
+  <% @website.ranks.each do |rank| %>
+  <%= bar_chart ({"Previous Rank" => rank.old_rank , "Current Rank" => rank.rank}) %>
+  <% end%>
+</div>
