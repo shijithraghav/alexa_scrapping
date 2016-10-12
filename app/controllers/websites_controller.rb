@@ -44,16 +44,4 @@ class WebsitesController < ApplicationController
   def web_params
     params.require(:website).permit(:url_name, :user_id)
   end
-
-  def base_url
-    'http://www.alexa.com/siteinfo/'
-  end
-
-  def search_site_name
-    params[:search].present? ? params[:search].to_s : ''
-  end
-
-  def custom_url
-    base_url + search_site_name
-  end
 end

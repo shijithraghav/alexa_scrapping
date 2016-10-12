@@ -20,7 +20,6 @@ class Website < ActiveRecord::Base
       ranks.create(rank: rank, old_rank: old_rank)
     end
   rescue Exception => e
-    Rails.logger.info "#{url_name} rank fetch failed."
     Rails.logger.info e.message.to_s
   end
 

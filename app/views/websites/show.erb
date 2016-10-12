@@ -7,12 +7,11 @@
    <tr>
     <td><%= @website.url_name %></td>
     <% if @website.ranks.empty?%>
-    <td>Rank is not available. Please Check after some time</td>
+      <td>Rank is not available. Please Check after some time</td>
+    <%else%>
+      <td><%= @website.ranks.first.rank%></td>
+      <td><%= link_to 'Delete', @website, method: :delete %></td>
     <%end%>
-    <% @website.ranks.each do |rank| %>
-    <td><%= rank.rank%></td>
-    <td><%= link_to 'Delete', @website, method: :delete %></td>
-    <% end%>
     </tr>
 </table>
 
