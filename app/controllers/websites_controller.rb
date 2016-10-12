@@ -29,6 +29,9 @@ class WebsitesController < ApplicationController
 
   def show
     @website = Website.find(params[:id])
+    check_user(@website)
+    rescue ActiveRecord::RecordNotFound
+      redirect_to websites_index_path
   end
 
   def destroy
@@ -41,6 +44,12 @@ class WebsitesController < ApplicationController
 
   private
 
+  def check_user(website)
+    puts website
+    if website.user.id != current_user.id
+      redirect_to websites_index_path(notice: 'You cannot acces that page')
+    end
+  end
   def web_params
     params.require(:website).permit(:url_name, :user_id)
   end
