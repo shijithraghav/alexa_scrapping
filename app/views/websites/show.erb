@@ -20,6 +20,6 @@
 <div id = "chart">
 
   <% @website.ranks.each do |rank| %>
-  <%= bar_chart ({"Previous Rank" => rank.old_rank , "Current Rank" => rank.rank}) %>
+  <%= line_chart ({"Previous Rank" => rank.old_rank , "Current Rank" => rank.rank}) %>
   <% end%>
 </div>
