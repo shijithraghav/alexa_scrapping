@@ -6,6 +6,9 @@
   </tr>
    <tr>
     <td><%= @website.url_name %></td>
+    <% if @website.ranks.empty?%>
+    <td>Rank is not available. Please Check after some time</td>
+    <%end%>
     <% @website.ranks.each do |rank| %>
     <td><%= rank.rank%></td>
     <td><%= link_to 'Delete', @website, method: :delete %></td>
