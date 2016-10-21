@@ -26,7 +26,6 @@ class Website < ActiveRecord::Base
   private
 
   def fetch_rank(url)
-    doc = ''
     doc = Nokogiri::HTML(open(url))
     rank_data = doc.at_css('.metrics-data').inner_text.to_s.delete(',').split.first
     rank_data.to_i
