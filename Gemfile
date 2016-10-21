@@ -34,6 +34,8 @@ gem 'highcharts-rails'
 
 gem 'whenever', require: false
 
+gem "typhoeus"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
