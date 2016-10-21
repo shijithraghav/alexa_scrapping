@@ -17,7 +17,7 @@ class Website < ActiveRecord::Base
     if ranks.present?
       ranks.update_all(rank: rank, old_rank: old_rank)
     else
-      ranks.create(rank: rank, old_rank: old_rank)
+      ranks.create(rank: rank, old_rank: rank)
     end
   rescue Exception => e
     Rails.logger.info e.message.to_s
