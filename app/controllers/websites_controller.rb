@@ -12,9 +12,7 @@ class WebsitesController < ApplicationController
     @old_rank = 0
     @website = current_user.websites.find_by_url_name(params[:website][:url_name])
     if @website.present?
-      @website.ranks.each do |rank|
-        @old_rank = rank.rank
-      end
+      @old_rank = @website.ranks.first.rank
       RankScrapJob.perform_async(@website, @old_rank)
     else
       @website = current_user.websites.build(web_params)
